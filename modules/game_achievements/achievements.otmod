@@ -1,0 +1,8 @@
+Module
+  name: game_achievements
+  description: Game Achievements
+  author: WOP
+  sandboxed: true
+  scripts: [ achievements ]
+  @onLoad:   init()
+  @onUnload: terminate()

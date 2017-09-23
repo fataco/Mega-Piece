@@ -1,0 +1,47 @@
+MainWindow
+  id: dialWindow
+  text: Recharge Dial
+  height: 200
+  width: 200
+
+  Item
+    id: item
+    anchors.top: parent.top
+    anchors.horizontalCenter: parent.horizontalCenter
+    margin-top: 10
+    focusable: false
+    virtual: true
+
+  Label
+    id: count
+    text: 1/25
+    anchors.horizontalCenter: parent.horizontalCenter
+    anchors.top: parent.top
+    margin-top: 50
+    text-auto-resize: true
+
+  HorizontalScrollBar
+    id: countScrollBar
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.top: parent.top
+    margin-top: 80
+    focusable: false
+
+  Button
+    id: buttonCancel
+    text: Cancel
+    height: 20
+    anchors.top: parent.top
+    anchors.horizontalCenter: parent.horizontalCenter
+    margin-top: 132
+    //@onClick: self:getParent():hide()
+
+  Button
+    id: buttonRecharge
+    text: Recharge
+    height: 20
+    anchors.top: parent.top
+    anchors.horizontalCenter: parent.horizontalCenter
+    margin-top: 110
+

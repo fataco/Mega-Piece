@@ -1,0 +1,57 @@
+CustomLabel < Label
+  font: verdana-11px-monochrome
+  text-offset: 2 0
+  focusable: true
+  background-color: alpha
+  
+  $focus:
+    background-color: #444444
+
+  $on focus:
+    color: #00ff00
+  $!on focus:
+    color: #ffffff
+    
+MiniWindow
+  !text: tr('Achievements')
+  size: 280 300
+  icon: icon
+  @onClose: toggle()
+
+  Label
+    id: lblPoints
+    !text: tr('Points: 0')
+    anchors.top: parent.top
+    anchors.left: parent.left
+    text-auto-resize: true
+    margin-top:   24
+    margin-left:  10      
+  
+  TextList
+    id: listBoxAchievements
+    anchors.top:    parent.top
+    anchors.left:   parent.left
+    anchors.bottom: parent.bottom
+    anchors.right:  parent.right
+    margin-right:  10
+    margin-left:   10
+    margin-top:    42
+    margin-bottom: 10
+    focusable: false
+    size: 180 180
+    vertical-scrollbar: indexScroll
+    focusable: true
+    phantom: false
+    
+  VerticalScrollBar
+    id: indexScroll
+    anchors.top:    parent.top
+    anchors.right:  parent.right
+    anchors.bottom: parent.bottom
+    margin-top:     42
+    margin-bottom:  10
+    margin-right:   10
+    step: 16
+    height: 170
+      
+  MiniWindowContents

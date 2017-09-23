@@ -1,0 +1,229 @@
+SpellProgress < UIProgressRect
+  background: #585858AA
+  percent: 100
+  focusable: false
+  font: verdana-11px-rounded
+  image-source: images/moldura
+  anchors.left: parent.left
+  anchors.top: parent.top
+  size: 32 32
+  text-align: center
+
+UISpellButton < UIButton
+  size: 32 32
+  anchors.top: parent.top
+  anchors.left: parent.left
+
+MiniWindow
+  icon: images/icon
+  id: spellWindow
+  !text: tr('Spells')
+  height: 222
+  @onClose: doOpen(false)
+
+  UISpellButton
+    id: m1
+    margin-left: 26
+    margin-top: 34
+  UISpellButton
+    id: m2
+    margin-left: 62
+    margin-top: 34
+  UISpellButton
+    id: m3
+    margin-left: 98
+    margin-top: 34
+  UISpellButton
+    id: m4
+    margin-left: 134
+    margin-top: 34
+    
+  UISpellButton
+    id: m5
+    margin-left: 26
+    margin-top: 70
+  UISpellButton
+    id: m6
+    margin-left: 62
+    margin-top: 70
+  UISpellButton
+    id: m7
+    margin-left: 98
+    margin-top: 70
+  UISpellButton
+    id: m8
+    margin-left: 134
+    margin-top: 70
+
+  UISpellButton
+    id: m9
+    margin-left: 26
+    margin-top: 106
+  UISpellButton
+    id: m10
+    margin-left: 62
+    margin-top: 106
+  UISpellButton
+    id: m11
+    margin-left: 98
+    margin-top: 106
+  UISpellButton
+    id: m12
+    margin-left: 134
+    margin-top: 106
+
+  UISpellButton
+    id: m13
+    margin-left: 26
+    margin-top: 142
+  UISpellButton
+    id: m14
+    margin-left: 62
+    margin-top: 142
+  UISpellButton
+    id: m15
+    margin-left: 98
+    margin-top: 142
+  UISpellButton
+    id: m16
+    margin-left: 134
+    margin-top: 142
+    
+  UISpellButton
+    id: m17
+    margin-left: 26
+    margin-top: 178
+  UISpellButton
+    id: m18
+    margin-left: 62
+    margin-top: 178
+  UISpellButton
+    id: m19
+    margin-left: 98
+    margin-top: 178
+  UISpellButton
+    id: m20
+    margin-left: 134
+    margin-top: 178
+  
+  UISpellButton
+    id: m21
+    margin-left: 26
+    margin-top: 214
+  UISpellButton
+    id: m22
+    margin-left: 62
+    margin-top: 214
+  UISpellButton
+    id: m23
+    margin-left: 98
+    margin-top: 214
+  UISpellButton
+    id: m24
+    margin-left: 134
+    margin-top: 214                
+        
+
+  SpellProgress
+    id: p1
+    margin-left: 26
+    margin-top: 34
+  SpellProgress
+    id: p2
+    margin-left: 62
+    margin-top: 34
+  SpellProgress
+    id: p3
+    margin-left: 98
+    margin-top: 34
+  SpellProgress
+    id: p4
+    margin-left: 134
+    margin-top: 34
+    
+  SpellProgress
+    id: p5
+    margin-left: 26
+    margin-top: 70
+  SpellProgress
+    id: p6
+    margin-left: 62
+    margin-top: 70
+  SpellProgress
+    id: p7
+    margin-left: 98
+    margin-top: 70
+  SpellProgress
+    id: p8
+    margin-left: 134
+    margin-top: 70
+
+  SpellProgress
+    id: p9
+    margin-left: 26
+    margin-top: 106
+  SpellProgress
+    id: p10
+    margin-left: 62
+    margin-top: 106
+  SpellProgress
+    id: p11
+    margin-left: 98
+    margin-top: 106
+  SpellProgress
+    id: p12
+    margin-left: 134
+    margin-top: 106
+
+  SpellProgress
+    id: p13
+    margin-left: 26
+    margin-top: 142
+  SpellProgress
+    id: p14
+    margin-left: 62
+    margin-top: 142
+  SpellProgress
+    id: p15
+    margin-left: 98
+    margin-top: 142
+  SpellProgress
+    id: p16
+    margin-left: 134
+    margin-top: 142
+
+  SpellProgress
+    id: p17
+    margin-left: 26
+    margin-top: 178
+  SpellProgress
+    id: p18
+    margin-left: 62
+    margin-top: 178
+  SpellProgress
+    id: p19
+    margin-left: 98
+    margin-top: 178
+  SpellProgress
+    id: p20
+    margin-left: 134
+    margin-top: 178
+    
+  SpellProgress
+    id: p21
+    margin-left: 26
+    margin-top: 214
+  SpellProgress
+    id: p22
+    margin-left: 62
+    margin-top: 214
+  SpellProgress
+    id: p23
+    margin-left: 98
+    margin-top: 214
+  SpellProgress
+    id: p24
+    margin-left: 134
+    margin-top: 214    
+
+  MiniWindowContents

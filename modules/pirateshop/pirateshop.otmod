@@ -1,0 +1,11 @@
+Module
+  name: pirate_shop
+  description: Shop for the pirate coin.
+  author: Snowsz
+  website: 
+  version: 1.0
+  sandboxed: true
+  autoload: true
+  scripts: [ pirateshop ]
+  @onLoad: init()
+  @onUnload: terminate()

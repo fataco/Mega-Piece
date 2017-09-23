@@ -1,0 +1,25 @@
+MiniWindow
+  !text: tr("Gym")
+  icon: icon
+  size: 120 70
+  @onClose: window_hide()
+
+  Label
+    id: lblTick
+    !text: tr('Ticks: ???')
+    text-auto-resize: true
+    anchors.top: parent.top
+    anchors.left: parent.left           
+    margin-top: 25
+    margin-left: 36        
+
+  Button
+    id: btnQuit
+    !text: tr('Quit')
+    @onClick: quit()
+    anchors.top: parent.top        
+    anchors.left: parent.left           
+    margin-top: 40
+    margin-left: 6
+    
+  MiniWindowContents         

@@ -1,0 +1,69 @@
+NextOutfitButton < NextButton
+PrevOutfitButton < PreviousButton
+
+MainWindow
+  !text: tr('Select Outfit')
+  size: 160 200
+
+  @onEnter: modules.game_outfit.accept()
+  @onEscape: modules.game_outfit.destroy()
+
+  // Creature Boxes
+  Creature
+    id: outfitCreatureBox
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 15
+    margin-left: 22
+    padding: 4 4 4 4
+    fixed-creature-size: true
+
+  Label
+    id: outfitName
+    !text: tr('Outfit')
+    width: 115
+    anchors.bottom: prev.top
+    anchors.left: prev.left
+    margin-bottom: 2
+
+  NextOutfitButton
+    id: outfitNextButton
+    anchors.left: outfitCreatureBox.right
+    anchors.verticalCenter: outfitCreatureBox.verticalCenter
+    margin-left: 3
+    enabled: true
+    @onClick: modules.game_outfit.nextOutfitType()
+
+  PrevOutfitButton
+    id: outfitPrevButton
+    anchors.right: outfitCreatureBox.left
+    anchors.verticalCenter: outfitCreatureBox.verticalCenter
+    margin-right: 3
+    enabled: true
+    @onClick: modules.game_outfit.previousOutfitType()
+
+
+  // Action Button Section
+
+  HorizontalSeparator
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: next.top
+    margin-bottom: 10
+    margin-top: 5
+
+  Button
+    id: outfitOkButton
+    !text: tr('Ok')
+    width: 64
+    anchors.right: next.left
+    anchors.bottom: parent.bottom
+    @onClick: modules.game_outfit.accept()
+
+  Button
+    id: outfitCancelButton
+    !text: tr('Cancel')
+    width: 64
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    @onClick: modules.game_outfit.destroy()

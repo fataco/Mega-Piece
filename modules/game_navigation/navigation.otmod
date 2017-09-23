@@ -1,0 +1,8 @@
+Module
+  name: game_navigation
+  description: Game Navigation
+  author: WOP
+  sandboxed: true
+  scripts: [ navigation ]
+  @onLoad: init()
+  @onUnload: terminate()

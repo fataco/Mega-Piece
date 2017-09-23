@@ -1,0 +1,64 @@
+SetaPraCima < Panel
+  id: setaCima
+  size: 28 65
+  anchors.top: parent.top
+  anchors.left: parent.left 
+  margin-top: 15
+  margin-left: -2
+  image-source: /images/ui/seta
+  @onSetup: |
+    scheduleEvent(function()
+      local count = 0       
+      local vtype = -1
+      cycleEvent(function()
+        if count < -5 then vtype = 1 elseif count > 5 then vtype = -1 end
+        count = count + vtype            
+        self:setMarginTop(15 + count)
+      end, 25)
+    end, 25)
+
+TopMenuPanel
+  id: topMenu       
+  anchors.top: parent.top
+  anchors.left: parent.left
+  anchors.right: parent.right       
+
+  TopMenuButtonsPanel
+    id: leftButtonsPanel      
+    anchors.top: parent.top
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+
+  TopMenuButtonsPanel      
+    id: leftGameButtonsPanel
+    anchors.top: parent.top
+    anchors.bottom: parent.bottom
+    anchors.left: prev.right  
+    visible: false         
+
+  TopMenuFrameCounterLabel
+    id: fpsLabel
+    text-auto-resize: true
+    anchors.top: parent.top
+    anchors.left: leftGameButtonsPanel.right
+
+  TopMenuPingLabel
+    color: white
+    id: pingLabel
+    text-auto-resize: true
+    anchors.top: fpsLabel.bottom
+    anchors.left: fpsLabel.left
+
+  TopMenuButtonsPanel
+    id: rightButtonsPanel
+    anchors.top: parent.top
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    padding-left: 0
+
+  TopMenuButtonsPanel
+    id: rightGameButtonsPanel
+    anchors.top: parent.top
+    anchors.bottom: parent.bottom
+    anchors.right: prev.left
+    visible: false

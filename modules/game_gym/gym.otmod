@@ -1,0 +1,8 @@
+Module
+  name: game_gym
+  description: Game Gym
+  author: WOP
+  sandboxed: true
+  scripts: [ gym ]
+  @onLoad: init()
+  @onUnload: terminate()

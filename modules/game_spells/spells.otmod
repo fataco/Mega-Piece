@@ -1,0 +1,9 @@
+Module
+  name: game_spells
+  description: View spell cooldown
+  author: WOP
+  website: nothing
+  sandboxed: true
+  scripts: [ configs, spells ]
+  @onLoad: init()
+  @onUnload: terminate()

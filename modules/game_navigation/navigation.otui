@@ -1,0 +1,44 @@
+UIBoat < UIButton
+  size: 32 32
+  focusable: false
+  
+MiniWindow
+  !text: tr('Navigation')
+  size: 180 80
+  icon: icon
+  @onClose: toggle()  
+  
+  Button
+    id: btnStart
+    !text: tr('Start')
+    anchors.left: parent.left
+    anchors.top: parent.top
+    @onClick: g_game.talk("!boat_enter")
+    margin-top: 25
+    margin-left: 5
+
+  Button
+    id: btnExtract
+    !text: tr('Extract')
+    anchors.left: parent.left
+    anchors.top: parent.top
+    @onClick: g_game.talk("!boat_extract")
+    margin-top: 50
+    margin-left: 5  
+  
+  UIBoat
+    id: item_boat
+    anchors.top: parent.top
+    anchors.right: parent.right    
+    margin-top: 25
+    margin-right: 24    
+
+  Label
+    id: lblNavigation
+    anchors.top: parent.top
+    anchors.right: parent.right
+    text-auto-resize: true
+    margin-top: 60
+    margin-right: 24
+    
+  MiniWindowContents

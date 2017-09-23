@@ -1,0 +1,200 @@
+Image < ImageView
+  @onMouseWheel: function() end
+  @move: function() end
+  border-width: 0
+  image-fixed-ratio: false
+
+ShopCategoryImage < Image
+  id: shopCategoryImage
+  margin-top: 7
+  anchors.top: parent.top
+  anchors.bottom: parent.bottom
+  anchors.left: parent.left
+  anchors.right: parent.right
+
+ShopCategory < Panel
+  id: shopCategory
+  height: 75
+  width: 107
+  margin-left: 1
+  margin-top: -10
+  ShopCategoryImage
+
+
+ShopItemCostLabel < Label
+  id: costLabel
+  font: terminus-14px-bold
+  text: x0
+  margin-bottom: 5
+  margin-left: 88
+  anchors.left: parent.left
+  anchors.bottom: parent.bottom
+  text-auto-resize: true
+
+ShopItemLabel < Label
+  id: label
+  font: terminus-14px-bold
+  text: Nothing
+  margin-top: 5
+  margin-left: 55
+  anchors.top: parent.top
+  anchors.left: parent.left
+  text-auto-resize: true
+
+ShopItemSprite < UIItem
+  id: spriteItem
+  height: 40
+  width: 40
+  visible: true
+  margin-left: 10
+  anchors.left: parent.left
+  anchors.verticalCenter: parent.verticalCenter
+  virtual: true
+
+
+ShopItemPirateCoinImage < Image
+  id: shopItemPirateCoinImage
+  tooltip: Pirate Coin
+  height: 32
+  width: 32
+  anchors.verticalCenter: parent.verticalCenter
+  margin-top: 10
+  margin-left: 55
+  anchors.left: parent.left
+  image-source: images/pirateCoin
+
+
+ShopItemBuyImage < Image
+  id: shopItemBuyImage
+  tooltip: Buy item
+  height: 40
+  width: 40
+  margin-top: 10
+  anchors.top: parent.top
+  anchors.right: parent.right
+  image-source: images/buy
+
+  $hover:
+    opacity: 1
+
+  $!hover:
+    opacity: 0.5
+
+ShopItemBackground < Image
+  id: background
+  image-source: images/coluna
+  anchors.left: parent.left
+  anchors.right: parent.right
+  anchors.top: parent.top
+  anchors.bottom: parent.bottom
+
+ShopItem < UIWidget
+  id: shopItem
+  height: 60
+  width: 425
+  margin-left: 1
+  margin-top: 10
+  ShopItemBackground
+  ShopItemBuyImage
+  ShopItemPirateCoinImage
+  ShopItemSprite
+  ShopItemLabel
+  ShopItemCostLabel
+
+MainWindow
+  id: shopWindow
+  height: 426
+  width: 600
+  font: terminus-14px-bold
+  @onEscape: onoff()
+  opacity: 1
+
+
+  Image
+    id: buyPirateCoin
+    tooltip: Buy Pirate Coins
+    height: 30
+    width: 122
+    background-color: #000000
+    border-width: 1
+    image-source: images/donate
+    margin-bottom: -2
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    @onClick: os.execute("start http://worldofpieceonline.com/donations/donate")
+
+    $hover:
+      opacity: 1
+
+    $!hover:
+      opacity: 0.5
+
+  Image
+    id: pirateCoinImage
+    tooltip: Pirate Coin
+    height: 32
+    width: 32
+    image-source: images/pirateCoin
+    margin-left: 130
+    margin-bottom: -2
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+
+  Label
+    id: pirateCoinLabel
+    font: terminus-14px-bold
+    text: x0
+    margin-left: 164
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    text-auto-resize: true
+
+  ScrollableFlatPanel
+    id: shopPanel
+    width: 109
+    margin-bottom: 35
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    vertical-scrollbar: shopPanelScrollBar
+
+    Image
+      id: background
+      image-source: images/shopCategoryPanel
+      anchors.fill: parent
+      margin-bottom: -10
+
+  VerticalScrollBar
+    id: shopPanelScrollBar
+    anchors.top: shopPanel.top
+    anchors.left: shopPanel.right
+    anchors.bottom: shopPanel.bottom 
+    step: 10
+
+  ScrollableFlatPanel
+    id: shopItemsPanel
+    margin-bottom: 35
+    margin-left: 130
+    margin-right: 10
+    anchors.fill: parent
+    vertical-scrollbar: shopItemsPanelScrollBar
+    
+    Image
+      id: background
+      image-source: images/shopItemsPanel
+      anchors.fill: parent
+
+  VerticalScrollBar
+    id: shopItemsPanelScrollBar
+    anchors.top: shopItemsPanel.top
+    anchors.left: shopItemsPanel.right
+    anchors.bottom: shopItemsPanel.bottom
+    step: 10
+
+  Image
+    id: borda
+    image-source: images/borda
+    anchors.fill: parent
+    margin: -15
+    margin-top: -30
+    phantom: true
